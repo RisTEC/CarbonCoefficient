@@ -18,8 +18,8 @@
             android:layout_width="255dp"
             android:layout_height="58dp"
             android:ems="10"
+            android:hint="What is your name?"
             android:inputType="textPersonName"
-            android:text="What is your name?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
             android:layout_height="60dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="What is your age?"
+            android:hint= "What is your age?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
@@ -42,7 +42,7 @@
             android:layout_height="64dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="What engine do you have?"
+            android:hint= "What engine do you have?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
@@ -53,7 +53,7 @@
             android:layout_height="71dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="How many kms do you drive per day on your car?"
+            android:hint= "How many kms do you drive per day on your car?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
@@ -64,7 +64,7 @@
             android:layout_height="69dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="How many kms do you travel via bus per day?"
+            android:hint= "How many kms do you travel via bus per day?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
@@ -75,7 +75,7 @@
             android:layout_height="64dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="(roughly)How many kms do you travel per year?"
+            android:hint= "(roughly)How many kms do you travel per year?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
@@ -86,7 +86,7 @@
             android:layout_height="67dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="How many serving of meat do you per week?"
+            android:hint= "How many serving of meat do you per week?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
@@ -97,7 +97,7 @@
             android:layout_height="63dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="How many deliveries do you get per week?"
+            android:hint= "How many deliveries do you get per week?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
@@ -108,7 +108,7 @@
             android:layout_height="71dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="How long is your geyser on per day (in minutes)?"
+            android:hint= "How long is your geyser on per day (in minutes)?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName11" />
@@ -119,10 +119,45 @@
             android:layout_height="76dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="How many times do you run your washing machine per week?"
+            android:hint= "How many times do you run your washing machine per week?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName17"
+            android:layout_width="425dp"
+            android:layout_height="65dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint= "How long is your fan on per day (In hours)"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.437"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName13" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName18"
+            android:layout_width="447dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="4dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint= "How long are your lights on per day (In hours)?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName17" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName19"
+            android:layout_width="480dp"
+            android:layout_height="76dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint= "How many disposable plastics do you use per week?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName18" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
