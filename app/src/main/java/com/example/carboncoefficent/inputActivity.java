@@ -147,16 +147,21 @@ private ActivityInputBinding binding;
                 String emission = null;//send
                 if(total>average){
                     pct=((total-average)/average)*100;
-                    emission = "Your carbon footprint is " +pct+" % more than the average person";
+                    String PCT = String.format("%.2f",pct);
+                    emission = "Your carbon footprint is " +PCT+" % more than the average person";
                 }
                 else if(total<average){
                     pct=((average-total)/total)*100;
-                    emission = "Your carbon footprint is " +pct+" % less than the average person";
+                    String PCT = String.format("%.2f",pct);
+                    emission = "Your carbon footprint is " +PCT+" % less than the average person";
                 }
                 double ePercent = (electricity/total)*100;//send
+                String epercent = String.format("%.2f",ePercent);
                 double tPercent = (transport/total)*100;//send
+                String tpercent = String.format("%.2f",tPercent);
                 double lPercent = (lifestyle/total)*100;//send
-                String[] sendOverValue ={
+                String lpercent = String.format("%.2f",lPercent);
+                String[] sendOverValue = {
                         String.valueOf(total),
                         plastic_usage,
                         public_transport,
@@ -164,9 +169,9 @@ private ActivityInputBinding binding;
                         cycling,
                         meat_usage,
                         emission,
-                        String.valueOf(ePercent),
-                        String.valueOf(tPercent),
-                        String.valueOf(lPercent),
+                        epercent,
+                        tpercent,
+                        lpercent,
                 };
                 return sendOverValue;
             }
