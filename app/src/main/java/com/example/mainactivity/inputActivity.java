@@ -111,34 +111,38 @@ private ActivityInputBinding binding;
                 double total=transport+lifestyle+electricity;
                 double average=0.30;
                 if(plastic_item>3){
-
+                    String plastic_usage = "Try to reduce plastic consumption";
                 }
                 if(car_km*7>bus_km){
-
+                    String public_transport ="Try to use public transport more";
                 }
                 if(light_hour>5 || fan_hour>10){
+                    String electric_consumption ="Try to reduce electricity consumption";
 
                 }
                 if(car_km*7 + bus_km>=100){
-
+                    String cycling = "Try to use other means of transport like cycle";
                 }
                 if(meat_serving>4){
+                    String meat_usage = "Try to eat less meat";
 
                 }
                 double pct;
+                String emission;
                 if(total>average){
                     pct=((total-average)/average)*100;
-
+                    emission = "Your carbon footprint is " +pct+" % more than the average person";
                 }
                 else if(total<average){
                     pct=((average-total)/total)*100;
+                    emission = "Your carbon footprint is " +pct+" % less than the average person";
                 }
                 return total;
             }
             public void onClick(View view) {
 
-                double a = calc();
-                Snackbar.make(view, "Average : "+ a, Snackbar.LENGTH_LONG)
+                double returnedTotal = calc();
+                Snackbar.make(view, "Average : "+ returnedTotal, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
 
