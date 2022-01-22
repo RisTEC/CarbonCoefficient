@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/etn1"
             android:layout_width="255dp"
             android:layout_height="58dp"
             android:ems="10"
@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/etn2"
             android:layout_width="254dp"
             android:layout_height="60dp"
             android:ems="10"
@@ -34,10 +34,10 @@
             android:hint= "What is your age?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/etn1" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/etn3"
             android:layout_width="266dp"
             android:layout_height="64dp"
             android:ems="10"
@@ -45,10 +45,10 @@
             android:hint= "What engine do you have?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/etn2" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName7"
+            android:id="@+id/etn4"
             android:layout_width="417dp"
             android:layout_height="71dp"
             android:ems="10"
@@ -56,10 +56,10 @@
             android:hint= "How many kms do you drive per day on your car?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+            app:layout_constraintTop_toBottomOf="@+id/etn3" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName8"
+            android:id="@+id/etn5"
             android:layout_width="405dp"
             android:layout_height="69dp"
             android:ems="10"
@@ -67,10 +67,10 @@
             android:hint= "How many kms do you travel via bus per day?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+            app:layout_constraintTop_toBottomOf="@+id/etn4" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName9"
+            android:id="@+id/etn6"
             android:layout_width="386dp"
             android:layout_height="64dp"
             android:ems="10"
@@ -78,10 +78,10 @@
             android:hint= "(roughly)How many kms do you travel per year?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+            app:layout_constraintTop_toBottomOf="@+id/etn5" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName10"
+            android:id="@+id/etn7"
             android:layout_width="412dp"
             android:layout_height="67dp"
             android:ems="10"
@@ -89,10 +89,10 @@
             android:hint= "How many serving of meat do you per week?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+            app:layout_constraintTop_toBottomOf="@+id/etn6" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName11"
+            android:id="@+id/etn8"
             android:layout_width="399dp"
             android:layout_height="63dp"
             android:ems="10"
@@ -100,10 +100,10 @@
             android:hint= "How many deliveries do you get per week?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
+            app:layout_constraintTop_toBottomOf="@+id/etn7" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName12"
+            android:id="@+id/etn9"
             android:layout_width="394dp"
             android:layout_height="71dp"
             android:ems="10"
@@ -111,10 +111,10 @@
             android:hint= "How long is your geyser on per day (in minutes)?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName11" />
+            app:layout_constraintTop_toBottomOf="@+id/etn8" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName13"
+            android:id="@+id/etn10"
             android:layout_width="399dp"
             android:layout_height="76dp"
             android:ems="10"
@@ -122,10 +122,10 @@
             android:hint= "How many times do you run your washing machine per week?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
+            app:layout_constraintTop_toBottomOf="@+id/etn9" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName17"
+            android:id="@+id/etn11"
             android:layout_width="425dp"
             android:layout_height="65dp"
             android:ems="10"
@@ -134,10 +134,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.437"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName13" />
+            app:layout_constraintTop_toBottomOf="@+id/etn10" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName18"
+            android:id="@+id/etn12"
             android:layout_width="447dp"
             android:layout_height="75dp"
             android:layout_marginTop="4dp"
@@ -146,10 +146,10 @@
             android:hint= "How long are your lights on per day (In hours)?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName17" />
+            app:layout_constraintTop_toBottomOf="@+id/etn11" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName19"
+            android:id="@+id/etn13"
             android:layout_width="480dp"
             android:layout_height="76dp"
             android:ems="10"
@@ -157,7 +157,7 @@
             android:hint= "How many disposable plastics do you use per week?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName18" />
+            app:layout_constraintTop_toBottomOf="@+id/etn12" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
