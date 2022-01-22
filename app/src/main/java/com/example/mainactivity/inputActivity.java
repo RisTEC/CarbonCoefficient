@@ -28,6 +28,7 @@ public class inputActivity extends AppCompatActivity {
 
 
 
+
 private ActivityInputBinding binding;
 
     @Override
@@ -48,6 +49,7 @@ private ActivityInputBinding binding;
         etn10 = (EditText) findViewById(R.id.etn10);
         etn11 = (EditText) findViewById(R.id.etn11);
         etn12 = (EditText) findViewById(R.id.etn12);
+        etn13 = (EditText) findViewById(R.id.etn13);
 
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
@@ -58,12 +60,7 @@ private ActivityInputBinding binding;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "press to calculate", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-            public void avgcarb (View v){
                 String engine_type = etn3.getText().toString();
-                int age = Integer.parseInt(etn2.getText().toString());
                 int car_km = Integer.parseInt(etn4.getText().toString());
                 int bus_km = Integer.parseInt(etn5.getText().toString());
                 int flights_km = Integer.parseInt(etn6.getText().toString());
@@ -91,52 +88,54 @@ private ActivityInputBinding binding;
                 double transport;
                 String name = etn1.getText().toString();
 
-                        electricity=(geyser_min*30*geyser_constant)+(fan_hour*30*fan_electricity_em)+(light_hour*30*light_electricity_em)+(load_machine*4*machine_emission);
-                       electricity/=Math.pow(10,6);
+                electricity=(geyser_min*30*geyser_constant)+(fan_hour*30*fan_electricity_em)+(light_hour*30*light_electricity_em)+(load_machine*4*machine_emission);
+                electricity/=Math.pow(10,6);
 
-                       lifestyle=(plastic_item*4*emission_per_item)+(meat_serving*meat_constant*4)+(delivery*4*delivery_emission);
-                       lifestyle/=Math.pow(10,6);
+                lifestyle=(plastic_item*4*emission_per_item)+(meat_serving*meat_constant*4)+(delivery*4*delivery_emission);
+                lifestyle/=Math.pow(10,6);
 
-                        transport=(bus_km*4*bus_emission)+((double)flights_km/12 * flights_emission);
-                        if(engine_type.equalsIgnoreCase("diesel")){
-                            transport+=(car_km*30*diesel_emission);
-                        }
-                        else if(engine_type.equalsIgnoreCase("petrol")){
-                            transport+=(car_km*30*petrol_emission);
-                        }
-                       else{
-                            transport+=(car_km*30*electric_emission);
-                        }
-                        transport/=Math.pow(10,6);
+                transport=(bus_km*4*bus_emission)+((double)flights_km/12 * flights_emission);
+                if(engine_type.equalsIgnoreCase("diesel")){
+                    transport+=(car_km*30*diesel_emission);
+                }
+                else if(engine_type.equalsIgnoreCase("petrol")){
+                    transport+=(car_km*30*petrol_emission);
+                }
+                else{
+                    transport+=(car_km*30*electric_emission);
+                }
+                transport/=Math.pow(10,6);
 
-                        double total=transport+lifestyle+electricity;
-                        double average=0.30;
-                        if(plastic_item>3){
+                double total=transport+lifestyle+electricity;
+                double average=0.30;
+                if(plastic_item>3){
 
-                        }
-                        if(car_km*7>bus_km){
+                }
+                if(car_km*7>bus_km){
 
-                        }
-                        if(light_hour>5 || fan_hour>10){
+                }
+                if(light_hour>5 || fan_hour>10){
 
-                        }
-                        if(car_km*7 + bus_km>=100){
+                }
+                if(car_km*7 + bus_km>=100){
 
-                       }
-                        if(meat_serving>4){
+                }
+                if(meat_serving>4){
 
-                        }
-                        double pct;
-                        if(total>average){
-                            pct=((total-average)/average)*100;
+                }
+                double pct;
+                if(total>average){
+                    pct=((total-average)/average)*100;
 
-                        }
-                        else if(total<average){
-                           pct=((average-total)/total)*100;
+                }
+                else if(total<average){
+                    pct=((average-total)/total)*100;
 
-                        }
-
+                }
+                Snackbar.make(view, "Average : " + total, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
+
         });
     }
 }
