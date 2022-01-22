@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mainactivity">
+    package="com.example.carboncoefficent">
 
     <application
         android:allowBackup="true"
@@ -10,21 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MainActivity">
         <activity
-            android:name=".finalActivity"
+            android:name="com.example.carboncoefficent.finalActivity"
             android:exported="true" />
         <activity
-            android:name=".processActivity"
+            android:name="com.example.carboncoefficent.processActivity"
             android:exported="true"
             android:label="KNOW THE PROCESS"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.carboncoefficent.MainActivity" />
         <activity
-            android:name=".inputActivity"
+            android:name="com.example.carboncoefficent.inputActivity"
             android:exported="true"
-            android:label="INPUT INFORMATION"
-            android:parentActivityName=".MainActivity"
+            android:label=""
+            android:parentActivityName="com.example.carboncoefficent.MainActivity"
             android:theme="@style/Theme.MainActivity.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.carboncoefficent.MainActivity"
             android:exported="true"
             android:label="CARBON FOOTPRINT TRACKER">
             <intent-filter>

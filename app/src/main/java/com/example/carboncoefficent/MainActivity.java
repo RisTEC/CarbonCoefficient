@@ -1,4 +1,4 @@
-package com.example.mainactivity;
+package com.example.carboncoefficent;
 
 import androidx.appcompat.app.AppCompatActivity;
 

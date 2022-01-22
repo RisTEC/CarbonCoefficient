@@ -1,16 +1,17 @@
-package com.example.mainactivity;
+package com.example.carboncoefficent;
 
 import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.mainactivity.databinding.ActivityInputBinding;
+import com.example.carboncoefficent.databinding.ActivityInputBinding;
 
 public class inputActivity extends AppCompatActivity {
     private EditText etn1;
@@ -57,16 +58,19 @@ private ActivityInputBinding binding;
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
         toolBarLayout.setTitle(getTitle());
 
-        FloatingActionButton fab = binding.fab;
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        Button btnCalc = (Button) findViewById(R.id.button5);
+        btnCalc.setOnClickListener(new View.OnClickListener() {
 
 
             public String[] calc()
             {
+                String name = etn1.getText().toString();
                 String engine_type = etn3.getText().toString();
                 int car_km = Integer.parseInt(etn4.getText().toString());
+
                 int bus_km = Integer.parseInt(etn5.getText().toString());
-                int flights_km = Integer.parseInt(etn6.getText().toString());
+                int flights_hours = Integer.parseInt(etn6.getText().toString());
                 int meat_serving = Integer.parseInt(etn7.getText().toString());
                 int delivery = Integer.parseInt(etn8.getText().toString());
                 int geyser_min = Integer.parseInt(etn9.getText().toString());
@@ -89,8 +93,8 @@ private ActivityInputBinding binding;
                 final int emission_per_item=450;
                 double electricity,lifestyle;
                 double transport;
-                String name = etn1.getText().toString();
-
+                String Name = etn1.getText().toString();
+                int flights_km = flights_hours*835;
                 electricity=(geyser_min*30*geyser_constant)+(fan_hour*30*fan_electricity_em)+(light_hour*30*light_electricity_em)+(load_machine*4*machine_emission);
                 electricity/=Math.pow(10,6);
 
@@ -110,7 +114,7 @@ private ActivityInputBinding binding;
                 transport/=Math.pow(10,6);
 
                 double total=transport+lifestyle+electricity;//send
-                double average=0.30;
+                final double average=0.30;
                 String plastic_usage;//send
                 if(plastic_item>3){
                     plastic_usage = "Try to reduce plastic consumption";
@@ -167,10 +171,145 @@ private ActivityInputBinding binding;
                 return sendOverValue;
             }
             public void onClick(View view) {
-                String [] values = calc();
-                Intent g = new Intent(inputActivity.this, finalActivity.class);
-                g.putExtra("SendOverValue", values);
-                startActivity(g);
+                String name = etn1.getText().toString();
+                String engine_type = etn3.getText().toString();
+                String car_km = etn4.getText().toString();
+                String v5 = etn5.getText().toString();
+                String v6 = etn6.getText().toString();
+                String v7 = etn7.getText().toString();
+                String v8 = etn8.getText().toString();
+                String v9 = etn9.getText().toString();
+                String v10 = etn10.getText().toString();
+                String v11 = etn11.getText().toString();
+                String v12 = etn12.getText().toString();
+                String v13 = etn13.getText().toString();
+                if (name.length()==0)
+                {
+                    etn1.requestFocus();
+                    etn1.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if (engine_type.length()==0)
+                {
+                    etn3.requestFocus();
+                    etn3.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if (!engine_type.equalsIgnoreCase("petrol")&&(!engine_type.equalsIgnoreCase("diesel")&&(!engine_type.equalsIgnoreCase("electric"))))
+                {
+                    etn3.requestFocus();
+                    etn3.setError("INVALID INPUT");
+                }
+                else if(car_km.length()==0)
+                {
+                    etn4.requestFocus();
+                    etn4.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v5.length()==0)
+                {
+                    etn5.requestFocus();
+                    etn5.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v6.length()==0)
+                {
+                    etn6.requestFocus();
+                    etn6.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v7.length()==0)
+                {
+                    etn7.requestFocus();
+                    etn7.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v8.length()==0)
+                {
+                    etn8.requestFocus();
+                    etn8.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v9.length()==0)
+                {
+                    etn9.requestFocus();
+                    etn9.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v10.length()==0)
+                {
+                    etn10.requestFocus();
+                    etn10.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v11.length()==0)
+                {
+                    etn11.requestFocus();
+                    etn11.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v12.length()==0)
+                {
+                    etn12.requestFocus();
+                    etn12.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(v13.length()==0)
+                {
+                    etn13.requestFocus();
+                    etn13.setError("FIELD CANNOT BE EMPTY");
+                }
+                else if(!car_km.matches("[0-9]+"))
+                {
+                    etn4.requestFocus();
+                    etn4.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v5.matches("[0-9]+"))
+                {
+                    etn5.requestFocus();
+                    etn5.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v5.matches("[0-9]+"))
+                {
+                    etn5.requestFocus();
+                    etn5.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v6.matches("[0-9]+"))
+                {
+                    etn6.requestFocus();
+                    etn6.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v7.matches("[0-9]+"))
+                {
+                    etn7.requestFocus();
+                    etn7.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v8.matches("[0-9]+"))
+                {
+                    etn8.requestFocus();
+                    etn8.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v9.matches("[0-9]+"))
+                {
+                    etn9.requestFocus();
+                    etn9.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v10.matches("[0-9]+"))
+                {
+                    etn10.requestFocus();
+                    etn10.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v11.matches("[0-9]+"))
+                {
+                    etn11.requestFocus();
+                    etn11.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v12.matches("[0-9]+"))
+                {
+                    etn12.requestFocus();
+                    etn12.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+                else if(!v13.matches("[0-9]+"))
+                {
+                    etn13.requestFocus();
+                    etn13.setError("ENTER ONLY NUMERICAL VALUES");
+                }
+
+                else {
+                    String[] values = calc();
+                    Intent g = new Intent(inputActivity.this, finalActivity.class);
+                    g.putExtra("SendOverValue", values);
+                    startActivity(g);
+                }
 
 
             }
