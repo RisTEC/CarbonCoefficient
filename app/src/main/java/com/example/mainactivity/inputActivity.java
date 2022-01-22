@@ -61,7 +61,7 @@ private ActivityInputBinding binding;
         fab.setOnClickListener(new View.OnClickListener() {
 
 
-            public double calc()
+            public String[] calc()
             {
                 String engine_type = etn3.getText().toString();
                 int car_km = Integer.parseInt(etn4.getText().toString());
@@ -140,7 +140,7 @@ private ActivityInputBinding binding;
                 }
                 else meat_usage = "Meat consumption is reasonable";
                 double pct;
-                String emission;//send
+                String emission = null;//send
                 if(total>average){
                     pct=((total-average)/average)*100;
                     emission = "Your carbon footprint is " +pct+" % more than the average person";
@@ -152,15 +152,24 @@ private ActivityInputBinding binding;
                 double ePercent = (electricity/total)*100;//send
                 double tPercent = (transport/total)*100;//send
                 double lPercent = (lifestyle/total)*100;//send
-
-                return total;
+                String[] sendOverValue ={
+                        String.valueOf(total),
+                        plastic_usage,
+                        public_transport,
+                        electric_consumption,
+                        cycling,
+                        meat_usage,
+                        emission,
+                        String.valueOf(ePercent),
+                        String.valueOf(tPercent),
+                        String.valueOf(lPercent),
+                };
+                return sendOverValue;
             }
             public void onClick(View view) {
-
-                double returnedTotal = calc();
-                Snackbar.make(view, "Average : "+ returnedTotal, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                String [] values = calc();
                 Intent g = new Intent(inputActivity.this, finalActivity.class);
+                g.putExtra("SendOverValue", values);
                 startActivity(g);
 
 
