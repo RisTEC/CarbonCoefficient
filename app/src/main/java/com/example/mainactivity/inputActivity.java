@@ -58,8 +58,10 @@ private ActivityInputBinding binding;
 
         FloatingActionButton fab = binding.fab;
         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+
+
+            public double calc()
+            {
                 String engine_type = etn3.getText().toString();
                 int car_km = Integer.parseInt(etn4.getText().toString());
                 int bus_km = Integer.parseInt(etn5.getText().toString());
@@ -91,7 +93,7 @@ private ActivityInputBinding binding;
                 electricity=(geyser_min*30*geyser_constant)+(fan_hour*30*fan_electricity_em)+(light_hour*30*light_electricity_em)+(load_machine*4*machine_emission);
                 electricity/=Math.pow(10,6);
 
-                lifestyle=(plastic_item*4*emission_per_item)+(meat_serving*meat_constant*4)+(delivery*4*delivery_emission);
+                lifestyle=(plastic_item*4*emission_per_item)+(meat_serving*meat_constant*4)+(delivery*5*delivery_emission);
                 lifestyle/=Math.pow(10,6);
 
                 transport=(bus_km*4*bus_emission)+((double)flights_km/12 * flights_emission);
@@ -130,9 +132,13 @@ private ActivityInputBinding binding;
                 }
                 else if(total<average){
                     pct=((average-total)/total)*100;
-
                 }
-                Snackbar.make(view, "Average : " + total, Snackbar.LENGTH_LONG)
+                return total;
+            }
+            public void onClick(View view) {
+
+                double a = calc();
+                Snackbar.make(view, "Average : "+ a, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
 
