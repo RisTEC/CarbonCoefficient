@@ -162,6 +162,8 @@ private ActivityInputBinding binding;
                         .setAction("Action", null).show();
                 Intent g = new Intent(inputActivity.this, finalActivity.class);
                 startActivity(g);
+
+
             }
 
         });
