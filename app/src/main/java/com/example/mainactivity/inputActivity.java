@@ -108,27 +108,38 @@ private ActivityInputBinding binding;
                 }
                 transport/=Math.pow(10,6);
 
-                double total=transport+lifestyle+electricity;
+                double total=transport+lifestyle+electricity;//send
                 double average=0.30;
+                String plastic_usage;//send
                 if(plastic_item>3){
-                    String plastic_usage = "Try to reduce plastic consumption";
+                    plastic_usage = "Try to reduce plastic consumption";
                 }
+                else
+                    plastic_usage = "Plastic consumption is under control";
+                String public_transport;//send
                 if(car_km*7>bus_km){
-                    String public_transport ="Try to use public transport more";
+                    public_transport ="Try to use public transport more";
                 }
+                else public_transport ="Car usage is adequate";
+                String electric_consumption;//send
                 if(light_hour>5 || fan_hour>10){
-                    String electric_consumption ="Try to reduce electricity consumption";
-
+                    electric_consumption ="Try to reduce electricity consumption";
                 }
+                else electric_consumption ="Electricity consumption is proper";
+
+                String cycling;//send
                 if(car_km*7 + bus_km>=100){
-                    String cycling = "Try to use other means of transport like cycle";
+                    cycling = "Try to use other means of transport like cycling";
                 }
+                else cycling = "Transport via vehicles is under control";
+                String meat_usage;//send
                 if(meat_serving>4){
-                    String meat_usage = "Try to eat less meat";
+                    meat_usage = "Try to eat less meat";
 
                 }
+                else meat_usage = "Meat consumption is reasonable";
                 double pct;
-                String emission;
+                String emission;//send
                 if(total>average){
                     pct=((total-average)/average)*100;
                     emission = "Your carbon footprint is " +pct+" % more than the average person";
@@ -137,6 +148,10 @@ private ActivityInputBinding binding;
                     pct=((average-total)/total)*100;
                     emission = "Your carbon footprint is " +pct+" % less than the average person";
                 }
+                double ePercent = (electricity/total)*100;//send
+                double tPercent = (transport/total)*100;//send
+                double lPercent = (lifestyle/total)*100;//send
+
                 return total;
             }
             public void onClick(View view) {
