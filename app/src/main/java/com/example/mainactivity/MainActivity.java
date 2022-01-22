@@ -16,5 +16,11 @@ public class MainActivity extends AppCompatActivity {
     public void launchInput(View v){
         //launch a new activity that gets input
         Intent i = new Intent(this, inputActivity.class);
+        startActivity(i);
+    }
+    public void launchknowprocess(View v){
+        //launch a new activity that gets input
+        Intent i = new Intent(this, processActivity.class);
+        startActivity(i);
     }
 }
