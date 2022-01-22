@@ -1,5 +1,6 @@
 package com.example.mainactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -58,6 +59,7 @@ private ActivityInputBinding binding;
 
         FloatingActionButton fab = binding.fab;
         fab.setOnClickListener(new View.OnClickListener() {
+
 
 
             public double calc()
@@ -154,12 +156,16 @@ private ActivityInputBinding binding;
 
                 return total;
             }
-            public void onClick(View view) {
+            public void onClick(View v) {
 
                 double returnedTotal = calc();
-                Snackbar.make(view, "Average : "+ returnedTotal, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent i = new Intent(inputActivity.this, processActivity.class);
+                i.putExtra("answer", returnedTotal);
+                startActivity(i);
             }
+
+
+
 
         });
     }
