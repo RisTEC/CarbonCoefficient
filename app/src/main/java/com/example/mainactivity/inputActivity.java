@@ -61,7 +61,6 @@ private ActivityInputBinding binding;
         fab.setOnClickListener(new View.OnClickListener() {
 
 
-
             public double calc()
             {
                 String engine_type = etn3.getText().toString();
@@ -156,16 +155,14 @@ private ActivityInputBinding binding;
 
                 return total;
             }
-            public void onClick(View v) {
+            public void onClick(View view) {
 
                 double returnedTotal = calc();
-                Intent i = new Intent(inputActivity.this, processActivity.class);
-                i.putExtra("answer", returnedTotal);
-                startActivity(i);
+                Snackbar.make(view, "Average : "+ returnedTotal, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                Intent g = new Intent(inputActivity.this, finalActivity.class);
+                startActivity(g);
             }
-
-
-
 
         });
     }

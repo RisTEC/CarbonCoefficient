@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MainActivity">
         <activity
+            android:name=".finalActivity"
+            android:exported="true" />
+        <activity
             android:name=".processActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity"
-            android:label="KNOW THE PROCESS"/>
+            android:label="KNOW THE PROCESS"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".inputActivity"
             android:exported="true"
