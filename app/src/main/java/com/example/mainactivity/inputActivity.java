@@ -25,22 +25,7 @@ public class inputActivity extends AppCompatActivity {
     private EditText etn11;
     private EditText etn12;
     private EditText etn13;
-    final int diesel_emission=130;
-       final int petrol_emission=120;
-            final int electric_emission=60;
-            final int delivery_emission=415;
-           final int meat_constant=1820;
-           final int milk_constant=800;
-            final int machine_emission=700;
-            final int bus_emission=100;
-            final int flights_emission=146;
-            final int geyser_constant=12;
-            final int fan_electricity_em=50;
-           final int light_electricity_em=7;
-            final int emission_per_item=450;
-            double electricity,lifestyle;
-            double transport;
-         String name = etn1.getText().toString();
+
 
 
 private ActivityInputBinding binding;
@@ -76,7 +61,6 @@ private ActivityInputBinding binding;
                 Snackbar.make(view, "press to calculate", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-            String name = etn1.getText().toString();
             public void avgcarb (View v){
                 String engine_type = etn3.getText().toString();
                 int age = Integer.parseInt(etn2.getText().toString());
@@ -90,13 +74,29 @@ private ActivityInputBinding binding;
                 int fan_hour = Integer.parseInt(etn11.getText().toString());
                 int light_hour = Integer.parseInt(etn12.getText().toString());
                 int plastic_item = Integer.parseInt(etn13.getText().toString());
+                final int diesel_emission=130;
+                final int petrol_emission=120;
+                final int electric_emission=60;
+                final int delivery_emission=415;
+                final int meat_constant=1820;
+                final int milk_constant=800;
+                final int machine_emission=700;
+                final int bus_emission=100;
+                final int flights_emission=146;
+                final int geyser_constant=12;
+                final int fan_electricity_em=50;
+                final int light_electricity_em=7;
+                final int emission_per_item=450;
+                double electricity,lifestyle;
+                double transport;
+                String name = etn1.getText().toString();
 
                         electricity=(geyser_min*30*geyser_constant)+(fan_hour*30*fan_electricity_em)+(light_hour*30*light_electricity_em)+(load_machine*4*machine_emission);
                        electricity/=Math.pow(10,6);
-                      System.out.println("Electricity tonnes of consumption: "+electricity);
+
                        lifestyle=(plastic_item*4*emission_per_item)+(meat_serving*meat_constant*4)+(delivery*4*delivery_emission);
                        lifestyle/=Math.pow(10,6);
-                        System.out.println("Lifestyle tonnes of consumption: "+lifestyle);
+
                         transport=(bus_km*4*bus_emission)+((double)flights_km/12 * flights_emission);
                         if(engine_type.equalsIgnoreCase("diesel")){
                             transport+=(car_km*30*diesel_emission);
@@ -108,45 +108,32 @@ private ActivityInputBinding binding;
                             transport+=(car_km*30*electric_emission);
                         }
                         transport/=Math.pow(10,6);
-                        System.out.println("Transport tonnes of consumption: "+transport);
+
                         double total=transport+lifestyle+electricity;
-                        System.out.println("Total consumption in tonnes: "+total);
-                        System.out.print("Electricity: ");
-                       System.out.format("%.2f",(electricity/total)*100);
-                       System.out.print("%");
-                        System.out.println();
-                        System.out.print("Transport: ");
-                        System.out.format("%.2f",(transport/total)*100);
-                        System.out.print("%");
-                        System.out.println();
-                      System.out.print("Lifestyle: ");
-                       System.out.format("%.2f",(lifestyle/total)*100);
-                       System.out.print("%");
-                        System.out.println();
                         double average=0.30;
                         if(plastic_item>3){
-                            System.out.println("Cut down on plastic items usage");
+
                         }
                         if(car_km*7>bus_km){
-                            System.out.println("Hi "+name+ " try to use more public transport!");
+
                         }
                         if(light_hour>5 || fan_hour>10){
-                            System.out.println("Hi "+name+ " try to use lights less during the day");
+
                         }
                         if(car_km*7 + bus_km>=100){
-                            System.out.println("Hi " + name + " try to use cycling as means of transport");
+
                        }
                         if(meat_serving>4){
-                            System.out.println("Hi " + name + " try to consume less meat");
+
                         }
                         double pct;
                         if(total>average){
                             pct=((total-average)/average)*100;
-                            System.out.println("You consume " +pct+"% more than the average");
+
                         }
                         else if(total<average){
                            pct=((average-total)/total)*100;
-                            System.out.println("You consume" + pct+"% less than the average");
+
                         }
 
             }
