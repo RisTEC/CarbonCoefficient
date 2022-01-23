@@ -31,11 +31,11 @@ public class finalActivity extends AppCompatActivity {
         TextView textView5 = (TextView) findViewById(R.id.textView10);
         textView5.setText(finalTotal[6]);
         TextView textView6 = (TextView) findViewById(R.id.textView11);
-        textView6.setText(finalTotal[7]);
+        textView6.setText("Electric : "+finalTotal[7]+"%");
         TextView textView7 = (TextView) findViewById(R.id.textView12);
-        textView7.setText(finalTotal[8]);
+        textView7.setText("Transport : "+finalTotal[8]+"%");
         TextView textView8 = (TextView) findViewById(R.id.textView13);
-        textView8.setText(finalTotal[9]);
+        textView8.setText("Lifestyle : "+finalTotal[9]+"%");
 
     }
 
