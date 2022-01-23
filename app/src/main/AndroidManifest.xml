@@ -5,28 +5,18 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.MainActivity">
+        android:theme="@style/Theme.MainActivity.NoActionBar" >
         <activity
             android:name="com.example.carboncoefficent.finalActivity"
             android:exported="true" />
-        <activity
-            android:name="com.example.carboncoefficent.processActivity"
-            android:exported="true"
-            android:label="KNOW THE PROCESS"
-            android:parentActivityName="com.example.carboncoefficent.finalActivity" />
+
         <activity
             android:name="com.example.carboncoefficent.inputActivity"
             android:exported="true"
-            android:label=""
-            android:parentActivityName="com.example.carboncoefficent.MainActivity"
-            android:theme="@style/Theme.MainActivity.NoActionBar" />
+            />
         <activity
             android:name="com.example.carboncoefficent.MainActivity"
-            android:exported="true"
-            android:label="Carbon Coffecient ">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

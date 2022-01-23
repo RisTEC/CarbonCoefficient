@@ -53,12 +53,6 @@ private ActivityInputBinding binding;
         etn12 = (EditText) findViewById(R.id.etn12);
         etn13 = (EditText) findViewById(R.id.etn13);
 
-        Toolbar toolbar = binding.toolbar;
-        setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
-        toolBarLayout.setTitle(getTitle());
-
-
         Button btnCalc = (Button) findViewById(R.id.button5);
         btnCalc.setOnClickListener(new View.OnClickListener() {
 

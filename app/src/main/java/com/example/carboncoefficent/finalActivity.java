@@ -42,9 +42,6 @@ public class finalActivity extends AppCompatActivity {
     public void restart(View v){
         Intent b = new Intent(finalActivity.this,MainActivity.class);
         startActivity(b);
-    }
-    public void knowmore(View v){
-        Intent l = new Intent(finalActivity.this, processActivity.class);
-        startActivity(l);
+
     }
 }
