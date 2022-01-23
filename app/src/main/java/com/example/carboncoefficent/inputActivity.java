@@ -110,13 +110,18 @@ private ActivityInputBinding binding;
                 double total=transport+lifestyle+electricity;//send
                 final double average=0.25;
                 String plastic_usage;//send
-                if(plastic_item>3){
-                    plastic_usage = "Try to reduce plastic consumption";
+                if(plastic_item>5){
+                    plastic_usage = "Plastic Consumption is far too high";
                 }
+                else if(plastic_item>3)
+                    plastic_usage = "Try to cut down on plastic consumption";
                 else
-                    plastic_usage = "Plastic consumption is under control";
+                    plastic_usage = "Plastic Usage is Under Control, Great Job!";
                 String public_transport;//send
-                if(car_km*7>bus_km){
+                if(car_km*7>2*bus_km*7||car_km*7>100)
+                    public_transport="Car Usage is Too High, Use more Public Transport";
+                else if (car_km*7>bus_km*7)
+                {
                     public_transport ="Try to use public transport more";
                 }
                 else public_transport ="Car usage is adequate";
@@ -124,13 +129,15 @@ private ActivityInputBinding binding;
                 if(light_hour>5 || fan_hour>10){
                     electric_consumption ="Try to reduce electricity consumption";
                 }
-                else electric_consumption ="Electricity consumption is proper";
+                else electric_consumption ="Electricity consumption is proper, Well Done!";
 
                 String cycling;//send
-                if(car_km*7 + bus_km*7>=100){
+                if (car_km*7 + bus_km*7>=150)
+                    cycling = "Transport Emissions are too much, Try Cycling";
+                else if(car_km*7 + bus_km*7>=100){
                     cycling = "Try to use other means of transport like cycling";
                 }
-                else cycling = "Transport via vehicles is under control";
+                else cycling = "Transport via vehicles is under control, Keep it up!";
                 String meat_usage;//send
                 if(meat_serving>4){
                     meat_usage = "Try to eat less meat";
