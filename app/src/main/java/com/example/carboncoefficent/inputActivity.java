@@ -149,12 +149,12 @@ private ActivityInputBinding binding;
                 if(total>average){
                     pct=((total-average)/average)*100;
                     String PCT = String.format("%.2f",pct);
-                    emission = "Your carbon footprint is " +PCT+" % more than the average Indian";
+                    emission = "Your carbon footprint is " +PCT+" % more than the average Indian (0.25 Tonnes)";
                 }
                 else if(total<average){
                     pct=((average-total)/total)*100;
                     String PCT = String.format("%.2f",pct);
-                    emission = "Your carbon footprint is " +PCT+" % less than the average Indian";
+                    emission = "Your carbon footprint is " +PCT+" % less than the average Indian (0.25 Tonnes)";
                 }
                 double ePercent = (electricity/total)*100;//send
                 String epercent = String.format("%.2f",ePercent);
