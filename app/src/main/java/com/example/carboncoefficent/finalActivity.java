@@ -36,6 +36,9 @@ public class finalActivity extends AppCompatActivity {
         textView7.setText("Transport : "+finalTotal[8]+"%");
         TextView textView8 = (TextView) findViewById(R.id.textView13);
         textView8.setText("Lifestyle : "+finalTotal[9]+"%");
+        TextView textView20 = (TextView) findViewById(R.id.textView20);
+        textView20.setText("Hey, "+finalTotal[10]);
+
 
     }
 

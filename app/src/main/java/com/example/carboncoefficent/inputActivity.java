@@ -108,7 +108,7 @@ private ActivityInputBinding binding;
                 transport/=Math.pow(10,6);
 
                 double total=transport+lifestyle+electricity;//send
-                final double average=0.30;
+                final double average=0.25;
                 String plastic_usage;//send
                 if(plastic_item>3){
                     plastic_usage = "Try to reduce plastic consumption";
@@ -127,7 +127,7 @@ private ActivityInputBinding binding;
                 else electric_consumption ="Electricity consumption is proper";
 
                 String cycling;//send
-                if(car_km*7 + bus_km>=100){
+                if(car_km*7 + bus_km*7>=100){
                     cycling = "Try to use other means of transport like cycling";
                 }
                 else cycling = "Transport via vehicles is under control";
@@ -142,12 +142,12 @@ private ActivityInputBinding binding;
                 if(total>average){
                     pct=((total-average)/average)*100;
                     String PCT = String.format("%.2f",pct);
-                    emission = "Your carbon footprint is " +PCT+" % more than the average person";
+                    emission = "Your carbon footprint is " +PCT+" % more than the average Indian";
                 }
                 else if(total<average){
                     pct=((average-total)/total)*100;
                     String PCT = String.format("%.2f",pct);
-                    emission = "Your carbon footprint is " +PCT+" % less than the average person";
+                    emission = "Your carbon footprint is " +PCT+" % less than the average Indian";
                 }
                 double ePercent = (electricity/total)*100;//send
                 String epercent = String.format("%.2f",ePercent);
@@ -166,6 +166,7 @@ private ActivityInputBinding binding;
                         epercent,
                         tpercent,
                         lpercent,
+                        name,
                 };
                 return sendOverValue;
             }
